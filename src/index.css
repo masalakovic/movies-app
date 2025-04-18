@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply bg-white sm:bg-gray-100;
+  }
+  h1 {
+    @apply text-3xl sm:text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-lg sm:text-xl font-medium;
+  }
+
+  h5 {
+    @apply text-base sm:text-lg font-medium;
+  }
+
+  h6 {
+    @apply text-sm sm:text-base font-medium;
+  }
+
+  p,
+  span,
+  i,
+  b {
+    @apply text-sm sm:text-base;
+  }
+}
+
+/*********** BUTTON ***********/
+.btn-primary {
+  @apply text-white hover:bg-blue-700 bg-blue-600 w-full sm:w-fit;
+}
+
+.btn-secondary {
+  @apply bg-transparent text-blue-600 hover:text-blue-700;
+}
+
+.btn-underlined {
+  @apply h-fit p-0 underline text-blue-600 hover:text-blue-700 bg-transparent text-sm sm:text-base;
+}
+
+.btn-danger {
+  @apply bg-transparent text-red-600  hover:text-red-700;
+}
+
+.btn-primary[disabled] {
+  @apply bg-gray-200 text-gray-600;
+}
+
+.btn-secondary[disabled],
+.btn-danger[disabled],
+.btn-underlined[disabled] {
+  @apply bg-transparent text-gray-600;
+}
+
+/*********** ICON ***********/
+.icon-wrapper {
+  @apply w-5 sm:w-6 h-5 sm:h-6 flex items-center;
+}
+.icon-wrapper svg {
+  @apply w-full;
+}
+
+/*********** INPUT ***********/
+
+input.input-error {
+  @apply border-red-500 focus:ring-red-500;
+}
+
+/*********** SELECT ***********/
+/*wrapper*/
+.react-select-wrapper {
+  @apply w-full;
+}
+
+/* control */
+.react-select-wrapper .react-select__control {
+  @apply border cursor-pointer border-gray-300 rounded-md h-9 sm:h-10 text-sm sm:text-base focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.react-select-wrapper .react-select__control--is-focused {
+  @apply border-blue-500 ring-1 ring-blue-500;
+}
+
+/* value-container */
+.react-select-wrapper .react-select__value-container {
+  @apply px-3 py-0;
+}
+
+/* single-value */
+.react-select-wrapper .react-select__single-value {
+  @apply text-gray-900;
+}
+
+/* input */
+.react-select-wrapper .react-select__input-container,
+.react-select-wrapper .react-select__placeholder {
+  @apply m-0;
+}
+
+.react-select-wrapper .react-select__input {
+  @apply m-0 p-0 h-max border-0 ring-0;
+}
+
+/* indicators */
+.react-select-wrapper .react-select__indicators {
+  @apply mr-3;
+}
+
+.react-select-wrapper .react-select__dropdown-indicator,
+.react-select-wrapper .react-select__clear-indicator {
+  @apply w-5 sm:w-6 h-5 sm:h-6 p-0 flex items-center;
+}
+
+.react-select-wrapper .react-select__dropdown-indicator svg {
+  @apply text-zinc-400 w-full;
+}
+
+.react-select-wrapper .react-select__clear-indicator svg {
+  @apply text-red-400 w-full;
+}
+
+.react-select-wrapper .react-select__dropdown-indicator {
+  @apply transition-transform duration-300;
+}
+.react-select-wrapper
+  .react-select__control--menu-is-open
+  .react-select__dropdown-indicator {
+  @apply rotate-180 transition-transform duration-300;
+}
+
+.react-select-wrapper .react-select__indicator-separator {
+  @apply hidden;
+}
+
+/* menu */
+.react-select-wrapper .react-select__menu {
+  @apply border border-gray-200 rounded shadow-lg;
+}
+
+/* option */
+.react-select-wrapper .react-select__option {
+  @apply bg-white hover:bg-blue-100 cursor-pointer text-sm sm:text-base;
+}
+
+.react-select-wrapper .react-select__option--is-selected,
+.react-select-wrapper
+  .react-select__option--is-selected.react-select__option--is-focused {
+  @apply bg-blue-500 hover:bg-blue-500;
+}
