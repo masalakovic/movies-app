@@ -26,7 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({head, children}) => {
         </div>
 
         {isOpen && (
-          <div className="absolute mt-2 right-0 bg-white border rounded-lg border-zinc-300 w-fit px-4 py-1">
+          <div className="absolute mt-2 right-0 bg-white dark:bg-zinc-700 border rounded-lg border-zinc-300 dark:border-zinc-600 w-fit px-4 py-1">
             {children}
           </div>
         )}
