@@ -1,5 +1,5 @@
 import {Navigate} from 'react-router-dom';
-import {useUser} from '../context/UserContext';
+import useUser from '../context/useUser';
 import {ReactNode} from 'react';
 
 interface ProtectedRouteProps {

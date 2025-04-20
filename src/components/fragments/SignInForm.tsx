@@ -1,8 +1,9 @@
 import {useForm} from 'react-hook-form';
 import {signInWithEmailAndPassword} from 'firebase/auth';
-import {auth} from '../../utils/firebase';
+import {auth} from '../../firebase/firebase';
 import Input from '../shared/Input';
 import Button from '../shared/Button';
+import {toast} from 'react-toastify';
 
 type FormValues = {
   email: string;
@@ -18,17 +19,11 @@ const SignInForm = () => {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password
-      );
-      const user = userCredential.user;
-      console.log(user);
-      //TODO: toast
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      toast.success('Success!');
     } catch (error) {
       console.error(error);
-      //TODO: toast
+      toast.error('Something went wrong!');
     }
   };
 

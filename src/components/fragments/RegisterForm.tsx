@@ -1,8 +1,9 @@
 import {useForm} from 'react-hook-form';
 import Input from '../shared/Input';
 import Button from '../shared/Button';
-import {auth} from '../../utils/firebase';
+import {auth} from '../../firebase/firebase';
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
+import {toast} from 'react-toastify';
 
 type FormValues = {
   name: string;
@@ -32,11 +33,9 @@ const RegisterForm = () => {
         displayName: `${data.name} ${data.lastName}`,
       });
 
-      console.log(user);
-      //TODO: toast
+      toast.success('Success!');
     } catch (error) {
-      console.error(error);
-      //TODO: toast
+      toast.error('Something went wrong!');
     }
   };
 
@@ -67,7 +66,7 @@ const RegisterForm = () => {
 
       <Input
         required
-        className="col-span-2"
+        className="col-span-2 sm:col-span-1"
         label="Email"
         type="email"
         {...register('email', {
@@ -82,7 +81,7 @@ const RegisterForm = () => {
 
       <Input
         required
-        className="col-span-2"
+        className="col-span-2 sm:col-span-1"
         label="Password"
         type="password"
         {...register('password', {

@@ -1,4 +1,4 @@
-import {ButtonVariant} from '../../types';
+import {ButtonVariant} from '../../enums';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -14,12 +14,12 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`rounded-lg cursor-pointer font-medium px-4 transition h-9 sm:h-10 text-base sm:text-lg flex items-center justify-center gap-2 disabled:cursor-not-allowed 
+      className={`rounded-lg cursor-pointer px-4 font-semibold transition h-9 text-sm sm:text-base flex items-center flex-nowrap justify-center gap-2 disabled:cursor-not-allowed 
         btn-${variant} 
-        ${className?.trim()}`}
+        ${className ? className.trim() : ''}`}
       {...props}
     >
-      {leftIcon && <span className="icon-wrapper">{leftIcon}</span>}
+      {leftIcon && <span>{leftIcon}</span>}
       {children ? children : ''}
     </button>
   );
