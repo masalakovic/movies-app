@@ -6,3 +6,7 @@ npm run dev
 
 VITE_FIREBASE_API_KEY=firebase_api_key
 VITE_TMDB_ACCESS_TOKEN=tmdb_access_token
+
+## 🚀 Demo
+
+https://movie-app-61cba.web.app
